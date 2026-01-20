@@ -1,6 +1,6 @@
 <div align="center">
   
-  <img src="./assets/logo.png" alt="CARE-AD+ Logo" width="200"/>
+  <img src="https://raw.githubusercontent.com/abhishekk-y/COMPUTER-AIDED-RECOGNITION-OF-ALZHEIMER-DISEASE/main/assets/logo.png" alt="CARE-AD+ Logo" width="200"/>
   
   # 🧠 CARE-AD+ 
   
@@ -18,9 +18,9 @@
   ---
   
   **An advanced AI-powered clinical decision support system for early Alzheimer's disease detection**  
-  Deep Learning • Explainable AI (XAI) • LLM Assistant • Clinical Reports • Real-time Analytics
+  Deep Learning • Explainable AI (XAI) • RAG-Enhanced LLM • Clinical Reports • Real-time Analytics
   
-  [Features](#-key-features) • [Quick Start](#-quick-start) • [Documentation](#-project-structure) • [Screenshots](#-screenshots)
+  [Features](#-key-features) • [Quick Start](#-quick-start) • [Documentation](#-documentation) • [Demo](#-screenshots)
 
 </div>
 
@@ -28,11 +28,11 @@
 
 ## 📋 Overview
 
-**CARE-AD+** (Computer-Aided Recognition of Alzheimer's Disease Plus) is a comprehensive, multi-modal AI system designed to assist healthcare professionals in early detection and diagnosis of Alzheimer's disease. The system combines state-of-the-art deep learning with explainable AI techniques to provide transparent, clinically-relevant insights.
+**CARE-AD+** (Computer-Aided Recognition of Alzheimer's Disease Plus) is a comprehensive, multi-modal AI system designed to assist healthcare professionals in early detection and diagnosis of Alzheimer's disease. The system combines state-of-the-art deep learning with explainable AI techniques and RAG-enhanced LLM to provide transparent, clinically-relevant insights.
 
 ### 🎯 Mission
 
-Early detection of Alzheimer's disease is crucial for patient care planning and potential intervention. CARE-AD+ provides clinicians with AI-powered analysis of brain MRI scans, backed by visual explanations and natural language interpretations.
+Early detection of Alzheimer's disease is crucial for patient care planning and potential intervention. CARE-AD+ provides clinicians with AI-powered analysis of brain MRI scans, backed by visual explanations, medical knowledge retrieval, and natural language interpretations.
 
 ---
 
@@ -46,17 +46,17 @@ Early detection of Alzheimer's disease is crucial for patient care planning and 
     </td>
     <td width="33%" align="center">
       <h4>🔍 Explainable AI (XAI)</h4>
-      <p>Grad-CAM heatmaps and SHAP analysis for transparent, interpretable predictions</p>
+      <p>Grad-CAM heatmaps for transparent, interpretable predictions</p>
     </td>
     <td width="33%" align="center">
-      <h4>💬 LLM Assistant</h4>
-      <p>Ollama-powered AI chat with technical and patient-friendly explanation modes</p>
+      <h4>💬 RAG-Enhanced LLM</h4>
+      <p>Ollama + Medical Knowledge Base for evidence-based explanations</p>
     </td>
   </tr>
   <tr>
     <td width="33%" align="center">
       <h4>📄 Clinical Reports</h4>
-      <p>Professional PDF reports with visualizations, recommendations, and branding</p>
+      <p>Professional PDF reports with visualizations and recommendations</p>
     </td>
     <td width="33%" align="center">
       <h4>📊 Real-time Dashboard</h4>
@@ -80,15 +80,15 @@ Early detection of Alzheimer's disease is crucial for patient care planning and 
 │   ├── 📊 Dashboard - Real-time statistics & charts
 │   ├── 🔬 Prediction - MRI upload & analysis
 │   ├── 📈 Results - Detailed findings with heatmaps
-│   ├── 💬 Chat - AI Assistant interface
+│   ├── 💬 Chat - RAG-enhanced AI Assistant
 │   ├── 📄 Reports - PDF generation & download
 │   └── ⚙️ Admin - System management
 │
 ├── ⚡ Backend (FastAPI)
 │   ├── 🔐 Authentication - JWT-based security
-│   ├── 👤 Patients - CRUD operations
+│   ├── 👤 Patients - Simplified CRUD (ID, Name, Age)
 │   ├── 🧠 Predictions - ML inference pipeline
-│   ├── 💬 Chat - LLM integration
+│   ├── 💬 Chat - LLM with RAG integration
 │   ├── 📄 Reports - PDF generation
 │   └── ⚙️ Admin - Training & metrics
 │
@@ -99,8 +99,12 @@ Early detection of Alzheimer's disease is crucial for patient care planning and 
 │   └── 📊 Evaluation - Metrics & visualization
 │
 ├── 🔍 XAI Services
-│   ├── 🔥 Grad-CAM - Visual explanations
-│   └── 📊 SHAP - Feature importance
+│   └── 🔥 Grad-CAM - Visual explanations
+│
+├── 📚 RAG Pipeline
+│   ├── 🏥 Medical Knowledge Base
+│   ├── 🔎 Context Retrieval
+│   └── 💡 Prompt Enhancement
 │
 └── 💬 LLM Service (Ollama)
     ├── 👨‍⚕️ Technical Mode - For clinicians
@@ -124,65 +128,52 @@ Early detection of Alzheimer's disease is crucial for patient care planning and 
 
 ### Prerequisites
 
-Before you begin, ensure you have the following installed:
-
-| Requirement | Version | Purpose |
-|-------------|---------|---------|
-| ![Python](https://img.shields.io/badge/Python-3.10+-3776AB?logo=python&logoColor=white) | 3.10+ | Backend & ML |
-| ![Node.js](https://img.shields.io/badge/Node.js-18+-339933?logo=node.js&logoColor=white) | 18+ | Frontend |
-| ![Ollama](https://img.shields.io/badge/Ollama-Latest-000000?logo=ollama&logoColor=white) | Latest | LLM Service |
+| Requirement | Version | Download |
+|-------------|---------|----------|
+| **Python** | 3.10+ | [python.org](https://python.org/downloads/) |
+| **Node.js** | 18+ | [nodejs.org](https://nodejs.org/) |
+| **Ollama** | Latest | [ollama.ai](https://ollama.ai/download) |
 
 ### ⚡ One-Click Setup (Windows)
 
 ```bash
-# Just double-click QUICK_START.bat
-# It will:
-# ✅ Create Python virtual environment
-# ✅ Install all dependencies
-# ✅ Pull Ollama phi3 model
-# ✅ Start backend & frontend servers
+# Just double-click:
+QUICK_START.bat
 ```
+
+This automatically:
+- ✅ Creates Python virtual environment
+- ✅ Installs all dependencies
+- ✅ Pulls Ollama phi3 model
+- ✅ Starts backend & frontend servers
 
 ### 🔧 Manual Installation
 
 ```bash
-# 1️⃣ Clone the repository
+# 1. Clone repository
 git clone https://github.com/abhishekk-y/COMPUTER-AIDED-RECOGNITION-OF-ALZHEIMER-DISEASE.git
 cd COMPUTER-AIDED-RECOGNITION-OF-ALZHEIMER-DISEASE
 
-# 2️⃣ Setup Backend
+# 2. Setup backend
 cd backend
 python -m venv venv
-venv\Scripts\activate  # Windows
+venv\Scripts\activate
 pip install -r requirements.txt
 
-# 3️⃣ Setup Frontend
+# 3. Setup frontend
 cd ../frontend
 npm install
 
-# 4️⃣ Setup Ollama LLM
+# 4. Setup Ollama
 ollama pull phi3
 ollama serve
 
-# 5️⃣ Start Backend Server
-cd ../backend
-uvicorn app.main:app --reload --port 8000
-
-# 6️⃣ Start Frontend Server (new terminal)
-cd frontend
-npm run dev
-
-# 7️⃣ Open Browser
-# Navigate to http://localhost:3000
+# 5. Start servers
+cd ..
+start_app.bat
 ```
 
-### 🎯 Quick Commands
-
-| Command | Description |
-|---------|-------------|
-| `QUICK_START.bat` | Complete setup & launch |
-| `train_model.bat` | Train model on dataset |
-| `start_app.bat` | Start servers only |
+**Access**: http://localhost:3000
 
 ---
 
@@ -191,26 +182,19 @@ npm run dev
 <div align="center">
 
 ### Backend
-| Technology | Purpose | Version |
-|-----------|---------|---------|
-| ![FastAPI](https://img.shields.io/badge/-FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white) | REST API Framework | 0.104+ |
-| ![PyTorch](https://img.shields.io/badge/-PyTorch-EE4C2C?style=flat-square&logo=pytorch&logoColor=white) | Deep Learning | 2.0+ |
-| ![SQLAlchemy](https://img.shields.io/badge/-SQLAlchemy-D71F00?style=flat-square&logo=sqlalchemy&logoColor=white) | Database ORM | 2.0+ |
-| ![Ollama](https://img.shields.io/badge/-Ollama-000000?style=flat-square&logo=ollama&logoColor=white) | Local LLM | Latest |
-
-### Frontend
-| Technology | Purpose | Version |
-|-----------|---------|---------|
-| ![React](https://img.shields.io/badge/-React-61DAFB?style=flat-square&logo=react&logoColor=black) | UI Framework | 18.2+ |
-| ![Vite](https://img.shields.io/badge/-Vite-646CFF?style=flat-square&logo=vite&logoColor=white) | Build Tool | 5.0+ |
-| ![Recharts](https://img.shields.io/badge/-Recharts-FF6384?style=flat-square) | Data Visualization | 2.10+ |
-
-### AI/ML
 | Technology | Purpose |
 |-----------|---------|
-| ![EfficientNet](https://img.shields.io/badge/-EfficientNet-FF9900?style=flat-square) | Image Classification Backbone |
-| ![Grad-CAM](https://img.shields.io/badge/-Grad--CAM-E34F26?style=flat-square) | Visual Explanations |
-| ![SHAP](https://img.shields.io/badge/-SHAP-00ADD8?style=flat-square) | Feature Importance |
+| ![FastAPI](https://img.shields.io/badge/-FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white) | REST API Framework |
+| ![PyTorch](https://img.shields.io/badge/-PyTorch-EE4C2C?style=flat-square&logo=pytorch&logoColor=white) | Deep Learning |
+| ![SQLAlchemy](https://img.shields.io/badge/-SQLAlchemy-D71F00?style=flat-square) | Database ORM |
+| ![Ollama](https://img.shields.io/badge/-Ollama-000000?style=flat-square) | Local LLM |
+
+### Frontend
+| Technology | Purpose |
+|-----------|---------|
+| ![React](https://img.shields.io/badge/-React-61DAFB?style=flat-square&logo=react&logoColor=black) | UI Framework |
+| ![Vite](https://img.shields.io/badge/-Vite-646CFF?style=flat-square&logo=vite&logoColor=white) | Build Tool |
+| ![Recharts](https://img.shields.io/badge/-Recharts-FF6384?style=flat-square) | Data Visualization |
 
 </div>
 
@@ -221,207 +205,100 @@ npm run dev
 ```
 COMPUTER-AIDED-RECOGNITION-OF-ALZHEIMER-DISEASE/
 │
-├── 📂 assets/
-│   └── logo.png                    # Project logo
-│
 ├── 📂 backend/
 │   ├── 📂 app/
-│   │   ├── 📄 main.py              # FastAPI application entry
-│   │   ├── 📄 config.py            # Configuration settings
-│   │   ├── 📄 database.py          # SQLAlchemy setup
-│   │   ├── 📄 schemas.py           # Pydantic models
-│   │   │
-│   │   ├── 📂 models/
-│   │   │   └── models.py           # Database ORM models
-│   │   │
-│   │   ├── 📂 routers/
-│   │   │   ├── auth.py             # Authentication endpoints
-│   │   │   ├── patients.py         # Patient CRUD
-│   │   │   ├── predictions.py      # ML inference API
-│   │   │   ├── chat.py             # LLM chat interface
-│   │   │   ├── reports.py          # PDF generation
-│   │   │   └── admin.py            # Admin operations
-│   │   │
-│   │   └── 📂 services/
-│   │       ├── ml_service.py       # ML model loading & inference
-│   │       ├── xai_service.py      # Grad-CAM & SHAP
-│   │       ├── llm_service.py      # Ollama integration
-│   │       └── report_service.py   # PDF report generation
-│   │
+│   │   ├── main.py              # FastAPI application
+│   │   ├── config.py            # Configuration
+│   │   ├── 📂 routers/          # API endpoints
+│   │   ├── 📂 services/         # Business logic
+│   │   │   ├── ml_service.py    # ML inference
+│   │   │   ├── xai_service.py   # Grad-CAM
+│   │   │   ├── llm_service.py   # LLM integration
+│   │   │   ├── rag_service.py   # RAG pipeline
+│   │   │   └── report_service.py # PDF generation
+│   │   └── 📂 models/           # Database models
 │   ├── 📂 ml/
-│   │   ├── 📄 model.py             # CNN architecture definition
-│   │   ├── 📄 dataset.py           # Data loading & augmentation
-│   │   ├── 📄 train.py             # Training pipeline
-│   │   └── 📄 evaluate.py          # Evaluation & metrics
-│   │
-│   ├── 📄 requirements.txt         # Python dependencies
-│   └── 📄 Dockerfile               # Container configuration
+│   │   ├── model.py             # CNN architecture
+│   │   ├── dataset.py           # Data loading
+│   │   ├── train.py             # Training pipeline
+│   │   └── evaluate.py          # Evaluation
+│   └── requirements.txt
 │
 ├── 📂 frontend/
 │   ├── 📂 src/
-│   │   ├── 📄 App.jsx              # Main React component
-│   │   ├── 📄 main.jsx             # Entry point
-│   │   │
-│   │   ├── 📂 components/
-│   │   │   └── Layout.jsx          # App layout with sidebar
-│   │   │
-│   │   ├── 📂 pages/
-│   │   │   ├── Dashboard.jsx       # Statistics & charts
-│   │   │   ├── Prediction.jsx      # MRI upload & analysis
-│   │   │   ├── Results.jsx         # Detailed findings
-│   │   │   ├── Chat.jsx            # AI assistant
-│   │   │   ├── Reports.jsx         # PDF management
-│   │   │   ├── Admin.jsx           # System admin
-│   │   │   └── Login.jsx           # Authentication
-│   │   │
-│   │   ├── 📂 services/
-│   │   │   └── api.js              # Axios API client
-│   │   │
-│   │   └── 📂 styles/
-│   │       └── index.css           # Global styles
-│   │
-│   ├── 📄 package.json             # Node dependencies
-│   ├── 📄 vite.config.js           # Vite configuration
-│   └── 📄 index.html               # HTML template
+│   │   ├── 📂 pages/            # React pages
+│   │   ├── 📂 components/       # Reusable components
+│   │   ├── 📂 services/         # API client
+│   │   └── 📂 styles/           # CSS
+│   └── package.json
 │
-├── 📂 archive/                     # MRI Dataset (not in repo)
-│   ├── MildDemented/
-│   ├── ModerateDemented/
-│   ├── NonDemented/
-│   └── VeryMildDemented/
-│
-├── 📂 models/                      # Trained model weights
-├── 📂 uploads/                     # Uploaded MRI images
-├── 📂 reports/                     # Generated PDF reports
-│
-├── 📄 QUICK_START.bat              # One-click setup script
-├── 📄 train_model.bat              # Model training script
-├── 📄 start_app.bat                # Server startup script
-├── 📄 docker-compose.yml           # Docker orchestration
-├── 📄 LICENSE                      # MIT License
-└── 📄 README.md                    # This file
+├── 📂 assets/                   # Project assets
+├── QUICK_START.bat              # One-click setup
+├── setup_ollama.bat             # Ollama setup
+├── train_model.bat              # Model training
+├── INSTALLATION.md              # Installation guide
+├── OLLAMA_GUIDE.md              # LLM + RAG guide
+└── README.md                    # This file
 ```
 
 ---
 
-## 🔐 Security Features
+## 📚 Documentation
 
-<table>
-  <tr>
-    <td width="50%">
-      <h4>✅ JWT Authentication</h4>
-      <p>Secure token-based user authentication</p>
-    </td>
-    <td width="50%">
-      <h4>✅ Role-Based Access</h4>
-      <p>Clinician and Admin role separation</p>
-    </td>
-  </tr>
-  <tr>
-    <td width="50%">
-      <h4>✅ Password Hashing</h4>
-      <p>BCrypt secure password storage</p>
-    </td>
-    <td width="50%">
-      <h4>✅ Protected Routes</h4>
-      <p>API endpoint authorization</p>
-    </td>
-  </tr>
-</table>
-
----
-
-## 👥 Default Login Credentials
-
-### 🧪 For Testing
-
-| Role | Username | Password | Access |
-|------|----------|----------|--------|
-| **👨‍⚕️ Clinician** | `clinician` | `password123` | Standard |
-| **⚙️ Admin** | `admin` | `admin123` | Full |
-
-> ⚠️ **Important**: Change these credentials before production deployment!
-
----
-
-## 📦 API Endpoints
-
-### Authentication
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| POST | `/api/auth/register` | Register new user |
-| POST | `/api/auth/login` | User login |
-| GET | `/api/auth/me` | Get current user |
-
-### Patients
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| POST | `/api/patients/` | Create patient |
-| GET | `/api/patients/` | List all patients |
-| GET | `/api/patients/{id}` | Get patient details |
-
-### Predictions
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| POST | `/api/predictions/` | Run prediction |
-| GET | `/api/predictions/` | List predictions |
-| GET | `/api/predictions/{id}` | Get prediction details |
-| GET | `/api/predictions/{id}/gradcam` | Get Grad-CAM |
-
-### Reports
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| POST | `/api/reports/generate` | Generate PDF |
-| GET | `/api/reports/download/{id}` | Download PDF |
-
-### Chat
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| POST | `/api/chat/` | Send message to LLM |
-
----
-
-## 🐳 Docker Deployment
-
-```bash
-# Build and run with Docker Compose
-docker-compose up -d
-
-# Services:
-# - Backend:  http://localhost:8000
-# - Frontend: http://localhost:3000
-# - Ollama:   http://localhost:11434
-```
-
-### Docker Compose Services
-
-```yaml
-services:
-  backend:   # FastAPI server
-  frontend:  # React app
-  ollama:    # LLM service
-```
+| Document | Description |
+|----------|-------------|
+| [INSTALLATION.md](INSTALLATION.md) | Complete installation guide |
+| [OLLAMA_GUIDE.md](OLLAMA_GUIDE.md) | LLM setup & RAG pipeline |
 
 ---
 
 ## 🧠 Model Training
 
 ```bash
-# Train on your dataset
+# Quick training
 train_model.bat
 
-# Or manually:
+# Custom training
 cd backend
-python -m ml.train --dataset ../archive --epochs 50 --batch-size 32
+python -m ml.train --dataset ../archive/combined_images --epochs 50
 ```
 
-### Training Features
-- ✅ Data augmentation
-- ✅ Class weight balancing
-- ✅ Early stopping
-- ✅ Learning rate scheduling
-- ✅ Model checkpointing
-- ✅ Live progress tracking
+---
+
+## 🤖 RAG Pipeline
+
+The system includes a **Retrieval-Augmented Generation** pipeline that enhances LLM responses with medical knowledge:
+
+- **Medical Knowledge Base**: CDR staging, biomarkers, treatments
+- **Context Retrieval**: Automatic relevant knowledge extraction
+- **Prompt Enhancement**: Evidence-based medical facts
+- **Clinical Guidelines**: Recommendations per disease stage
+
+See [OLLAMA_GUIDE.md](OLLAMA_GUIDE.md) for details.
+
+---
+
+## 🐳 Docker Deployment
+
+```bash
+docker-compose up -d
+```
+
+Services:
+- Backend: http://localhost:8000
+- Frontend: http://localhost:3000
+- Ollama: http://localhost:11434
+
+---
+
+## 👥 Default Credentials
+
+| Role | Username | Password |
+|------|----------|----------|
+| Clinician | `clinician` | `password123` |
+| Admin | `admin` | `admin123` |
+
+> ⚠️ Change in production!
 
 ---
 
@@ -434,63 +311,44 @@ python -m ml.train --dataset ../archive --epochs 50 --batch-size 32
 | **Recall** | ~91% |
 | **F1 Score** | ~92% |
 
-*Metrics may vary based on dataset and training configuration*
-
 ---
 
 ## 🤝 Contributing
 
-We welcome contributions! Here's how:
-
-1. **Fork** the repository
-2. **Create** feature branch: `git checkout -b feature/AmazingFeature`
-3. **Commit** changes: `git commit -m 'Add AmazingFeature'`
-4. **Push** branch: `git push origin feature/AmazingFeature`
-5. **Open** Pull Request
+1. Fork the repository
+2. Create feature branch: `git checkout -b feature/AmazingFeature`
+3. Commit changes: `git commit -m 'Add AmazingFeature'`
+4. Push: `git push origin feature/AmazingFeature`
+5. Open Pull Request
 
 ---
 
 ## 📝 License
 
-This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details.
-
----
-
-## 🙏 Acknowledgments
-
-<table>
-  <tr>
-    <td align="center" width="33%">
-      <h4>🎓 Academic Guidance</h4>
-      <p>University project supervision</p>
-    </td>
-    <td align="center" width="33%">
-      <h4>🌐 Open Source Community</h4>
-      <p>PyTorch, FastAPI, React teams</p>
-    </td>
-    <td align="center" width="33%">
-      <h4>🏥 Medical Research</h4>
-      <p>Alzheimer's disease research community</p>
-    </td>
-  </tr>
-</table>
+MIT License - see [LICENSE](LICENSE) file.
 
 ---
 
 ## ⚠️ Medical Disclaimer
 
-> **IMPORTANT**: CARE-AD+ is a clinical decision **support** tool. It is NOT intended to replace professional medical judgment, diagnosis, or treatment. All predictions should be reviewed by qualified healthcare professionals in conjunction with clinical examination and patient history.
+> **IMPORTANT**: CARE-AD+ is a clinical decision **support** tool. It is NOT intended to replace professional medical judgment, diagnosis, or treatment. All predictions should be reviewed by qualified healthcare professionals.
+
+---
+
+## 🙏 Acknowledgments
+
+- **Academic Guidance**: University project supervision
+- **Open Source**: PyTorch, FastAPI, React communities
+- **Medical Research**: Alzheimer's disease research community
 
 ---
 
 <div align="center">
 
-### 🌟 If this project helped you, please consider giving it a ⭐!
-
----
+### 🌟 Star this repo if it helped you!
 
 **Made with ❤️ for Better Healthcare**
 
-[![Follow on GitHub](https://img.shields.io/github/followers/abhishekk-y?label=Follow&style=social)](https://github.com/abhishekk-y)
+[![GitHub stars](https://img.shields.io/github/stars/abhishekk-y/COMPUTER-AIDED-RECOGNITION-OF-ALZHEIMER-DISEASE?style=social)](https://github.com/abhishekk-y/COMPUTER-AIDED-RECOGNITION-OF-ALZHEIMER-DISEASE/stargazers)
 
 </div>
