@@ -183,7 +183,7 @@ start_app.bat
 
 ### Backend
 | Technology | Purpose |
-|-----------|---------|
+|-----------|----------|
 | ![FastAPI](https://img.shields.io/badge/-FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white) | REST API Framework |
 | ![PyTorch](https://img.shields.io/badge/-PyTorch-EE4C2C?style=flat-square&logo=pytorch&logoColor=white) | Deep Learning |
 | ![SQLAlchemy](https://img.shields.io/badge/-SQLAlchemy-D71F00?style=flat-square) | Database ORM |
